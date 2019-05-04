@@ -2,6 +2,12 @@
 
 > Words Randomizer in Vue.js
 
+## Demo
+[riwert.github.io/vue-randomizer](https://riwert.github.io/vue-randomizer)
+
+## Screenshot
+![vue randomizer](screenshot.png)
+
 ## Build Setup
 
 ``` bash
