@@ -2,11 +2,7 @@
   <div id="app" class="d-flex flex-column vh-100">
     <Header/>
 
-    <div id="content">
-      <div class="container text-center">
-        <router-view/>
-      </div>
-    </div>
+    <Main/>
 
     <Footer/>
   </div>
@@ -14,12 +10,14 @@
 
 <script>
 import Header from '@/components/Header'
+import Main from '@/components/Main'
 import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
+    Main,
     Footer
   }
 }

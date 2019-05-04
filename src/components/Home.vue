@@ -1,5 +1,5 @@
 <template>
-  <section id="main" class="my-5">
+  <div id="home" class="my-5">
     <Alert v-if="alert.message" :type="alert.type" @clear="clearAlert">{{ alert.message }}</Alert>
 
     <form id="randomizeForm" @submit.prevent="onSubmit" :class="isLoading ? 'loading' : null">
@@ -37,7 +37,7 @@
         <button type="button" class="btn btn-link form-clear-storage" title="Reset all fields to default state" @click="clearStorage">RESET</button>
       </div>
     </form>
-  </section>
+  </div>
 </template>
 
 <script>
