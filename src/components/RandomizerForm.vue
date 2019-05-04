@@ -22,10 +22,12 @@
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group text-left">
+      <label for="wordsInput">Words input:</label>
       <textarea id="wordsInput" rows="8" class="form-control" placeholder="Words input" v-model="wordsInput"></textarea>
     </div>
-    <div class="form-group">
+    <div class="form-group text-left">
+      <label for="wordsOutput">Words output:</label>
       <textarea id="wordsOutput" rows="4" class="form-control" placeholder="Words output" v-model="wordsOutput"></textarea>
     </div>
     <div class="form-group">
@@ -128,9 +130,10 @@ export default {
 <style lang="scss" scoped>
 .col-form-label {
   white-space: nowrap;
-}
-label {
-  margin: 0;
+
+  label {
+    margin: 0;
+  }
 }
 .loading {
   cursor: wait;
