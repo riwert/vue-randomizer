@@ -89,7 +89,7 @@ export default {
       }
       this.wordsOutput = output.trim();
       this.isLoading = false;
-      this.$emit('alert', 'Words has been randomized.', 'success');
+      this.$emit('alert', 'The words have been randomized.', 'success');
     },
     saveToStorage: function (key) {
       if (this[key] !== undefined) {
@@ -108,10 +108,15 @@ export default {
     },
     clearOutput: function () {
       this.wordsOutput = '';
-      this.$emit('alert', 'Output has been cleared.', 'success');
+      this.$emit('alert', 'The output has been cleared.', 'success');
     },
     saveOutput: function () {
-      this.saveFile(this.wordsOutput, 'words-output.txt');
+      if (this.wordsOutput) {
+        this.saveFile(this.wordsOutput, 'words-output.txt');
+        this.$emit('alert', 'The output has been saved.', 'success');
+      } else {
+        this.$emit('alert', 'The output is empty and cannot be saved.', 'danger');
+      }
     },
     saveFile: function (textData, fileName) {
       const blob = new Blob([textData], {type: 'text/plain'});
