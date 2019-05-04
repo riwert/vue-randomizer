@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="my-5">
+  <div id="home">
     <Alert v-if="alert.message" :type="alert.type" @clear="clearAlert">{{ alert.message }}</Alert>
     <RandomizerForm @alert="showAlert"/>
   </div>

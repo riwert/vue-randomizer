@@ -1,5 +1,5 @@
 <template>
-  <main role="main">
+  <main role="main" class="my-5">
     <div class="container text-center">
       <router-view/>
     </div>
