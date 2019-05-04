@@ -1,6 +1,6 @@
 # vue-randomizer
 
-> Words Randomizer Vue.js project
+> Words Randomizer in Vue.js
 
 ## Build Setup
 

@@ -1,7 +1,7 @@
 {
   "name": "vue-randomizer",
   "version": "1.0.0",
-  "description": "Words Randomizer Vue.js project",
+  "description": "Words Randomizer in Vue.js",
   "author": "Revert <revert@revert.pl>",
   "private": true,
   "scripts": {
