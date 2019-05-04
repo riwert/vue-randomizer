@@ -107,8 +107,12 @@ export default {
       location.reload();
     },
     clearOutput: function () {
-      this.wordsOutput = '';
-      this.$emit('alert', 'The output has been cleared.', 'success');
+      if (this.wordsOutput) {
+        this.wordsOutput = '';
+        this.$emit('alert', 'The output has been cleared.', 'success');
+      } else {
+        this.$emit('alert', 'The output is already empty.', 'warning');
+      }
     },
     saveOutput: function () {
       if (this.wordsOutput) {
