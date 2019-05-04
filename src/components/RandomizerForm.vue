@@ -17,7 +17,7 @@
             Randomize words:
           </div>
           <div class="col-md-3 text-md-left">
-            <button type="submit" class="btn btn-primary form-submit w-100" title="Get a randomized words">GO</button>
+            <button type="submit" class="btn btn-primary form-submit w-100" title="Get a randomized words">RUN</button>
           </div>
         </div>
       </div>
@@ -126,6 +126,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.col-form-label {
+  white-space: nowrap;
+}
 label {
   margin: 0;
 }
