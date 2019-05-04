@@ -20,7 +20,7 @@ export default {
       alert: {
         message: null,
         type: null,
-        delay: 3000,
+        delay: 5000,
         timeout: 0
       }
     }
