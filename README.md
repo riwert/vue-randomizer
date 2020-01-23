@@ -1,6 +1,6 @@
 # Vuetify Randomizer
 
-> RNG and Words Randomizer in Vue.js with Vuetify UI
+> Simple RNG and words randomizer in Vue.js with Vuetify UI
 
 ## Demo
 [riwert.github.io/vue-randomizer](https://riwert.github.io/vue-randomizer)
