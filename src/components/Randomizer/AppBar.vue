@@ -6,7 +6,7 @@
   >
     <v-app-bar-nav-icon @click.stop="$emit('toggleDrawer')" />
     <v-toolbar-title>
-      <v-btn class="ma-2" color="white" x-large icon link href="/">
+      <v-btn class="ma-2" color="white" x-large icon link href="https://riwert.github.io/vue-randomizer">
         <v-icon>mdi-vuetify</v-icon>
       </v-btn>
       Randomizer
