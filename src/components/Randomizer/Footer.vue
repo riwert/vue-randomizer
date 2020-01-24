@@ -1,16 +1,18 @@
 <template>
     <v-footer
-      color="blue darken-4"
+      color="blue darken-2"
+      dark
       app
       justify="center"
     >
       <v-layout
         justify-center
       >
-        <span class="white--text">
+        <span>
           Made by
           <a
             href="https://revert.pl"
+            title="Web Developer"
             target="_blank"
             rel="noopener"
           >

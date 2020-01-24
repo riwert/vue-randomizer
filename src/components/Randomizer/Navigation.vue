@@ -3,6 +3,8 @@
     v-model="localDrawer"
     app
     temporary
+    dark
+    :src="background"
   >
     <v-img :src="logo" alt="Vuetify Logo" aspect-ratio="1" max-width="50%" class="mx-auto"></v-img>
 
@@ -37,6 +39,7 @@
 
 <script>
 import logo from '@/assets/vuetify-logo.png'
+import background from '@/assets/v-bg.webp'
 
 export default {
   name: 'Navigation',
@@ -47,7 +50,8 @@ export default {
 
   data: () => ({
     localDrawer: false,
-    logo
+    logo,
+    background
   }),
 
   watch: {

@@ -1,7 +1,7 @@
 <template>
   <v-app-bar
     app
-    color="blue darken-4"
+    color="blue darken-2"
     dark
   >
     <v-app-bar-nav-icon @click.stop="$emit('toggleDrawer')" />
