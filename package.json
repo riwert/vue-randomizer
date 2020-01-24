@@ -1,6 +1,6 @@
 {
-  "name": "vuetify-randomizer",
-  "version": "1.0.0",
+  "name": "v-randomizer",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
