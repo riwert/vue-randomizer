@@ -159,6 +159,8 @@ export default {
         if (this.randomAmount) {
           this.$emit('alert', `Example ${this.examples[type].label} has been loaded.`, 'success');
         }
+      } else {
+        return this.$emit('alert', 'The example does not exist.', 'error');
       }
     },
     getRandomInt: function (min, max) {
@@ -173,6 +175,14 @@ export default {
       random = random.replace(/(?:\r\n|\r|\n)/g, ' ');
       // remove dots and comas
       random = random.replace(/(?:\.|,)/g, '');
+      // validate empty input
+      if ( ! random.length) {
+        return this.$emit('alert', 'The input is empty.', 'error');
+      }
+      // validate incorrect abmount
+      if (this.randomAmount <= 0) {
+        return this.$emit('alert', 'The amount is incorrect.', 'error');
+      }
       // convert string to array
       const randomArray = random.split(' ');
       let output = '';
@@ -188,7 +198,7 @@ export default {
       if (this.randomResult) {
         this.$emit('alert', 'The input have been randomized.', 'success');
       } else {
-        this.$emit('alert', 'The input is empty.', 'error');
+        return this.$emit('alert', 'The result is empty.', 'error');
       }
     },
     saveToStorage: function (key) {
@@ -243,7 +253,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 .pointer-down {
