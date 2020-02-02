@@ -6,7 +6,7 @@
     dark
     :src="background"
   >
-    <v-img :src="logo" alt="Vuetify Logo" aspect-ratio="1" max-width="50%" class="mx-auto"></v-img>
+    <v-img :src="logo" alt="Vuetify Logo" aspect-ratio="1" max-width="50%" class="mx-auto mt-2"></v-img>
 
     <v-list dense>
       <v-list-item link href="https://riwert.github.io/vue-randomizer">
