@@ -20,7 +20,7 @@
                 <v-btn color="success" class="btn-load ma-2" v-on="on">
                   <v-icon left>mdi-folder-download</v-icon>
                   Load example
-                  <v-icon right>{{ example ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                  <v-icon right class="pointer-down" :class="{'flip': example}">mdi-chevron-down</v-icon>
                 </v-btn>
               </template>
               <v-list>
@@ -243,3 +243,15 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss" scoped>
+.pointer-down {
+  transition: 0.3s;
+  transform: rotate(0deg);
+
+  &.flip {
+    transform: rotate(180deg);
+  }
+}
+</style>
