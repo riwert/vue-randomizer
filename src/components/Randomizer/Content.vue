@@ -17,7 +17,7 @@
               offset-y
             >
               <template v-slot:activator="{ on }">
-                <v-btn color="success" class="btn-load ma-2" v-on="on">
+                <v-btn color="success" class="btn-load ma-1" v-on="on">
                   <v-icon left>mdi-folder-download</v-icon>
                   Load example
                   <v-icon right class="pointer-down" :class="{'flip': example}">mdi-chevron-down</v-icon>
@@ -34,7 +34,7 @@
               </v-list>
             </v-menu>
 
-            <v-btn color="warning" class="ma-2" @click="clearInput">
+            <v-btn color="warning" class="ma-1" @click="clearInput">
               <v-icon left>mdi-file-remove</v-icon>
               Clear input
             </v-btn>
@@ -75,11 +75,11 @@
           ></v-textarea>
 
           <div class="my-0">
-            <v-btn color="success" class="ma-2" @click="saveOutput">
+            <v-btn color="success" class="ma-1" @click="saveOutput">
               <v-icon left>mdi-file-download</v-icon>
               Save result
             </v-btn>
-            <v-btn color="warning" class="ma-2" @click="clearOutput">
+            <v-btn color="warning" class="ma-1" @click="clearOutput">
               <v-icon left>mdi-file-remove</v-icon>
               Clear result
             </v-btn>
@@ -154,11 +154,13 @@ export default {
         if (this.examples[type].amount) {
           this.randomAmount = this.examples[type].amount;
         }
-        // clear result
-        // this.randomResult = '';
+        // trigger randomization
+        this.onSubmit();
         if (this.randomAmount) {
           this.$emit('alert', `Example ${this.examples[type].label} has been loaded.`, 'success');
         }
+      } else {
+        return this.$emit('alert', 'The example does not exist.', 'error');
       }
     },
     getRandomInt: function (min, max) {
@@ -173,6 +175,14 @@ export default {
       random = random.replace(/(?:\r\n|\r|\n)/g, ' ');
       // remove dots and comas
       random = random.replace(/(?:\.|,)/g, '');
+      // validate empty input
+      if ( ! random.length) {
+        return this.$emit('alert', 'The input is empty.', 'error');
+      }
+      // validate incorrect abmount
+      if (this.randomAmount <= 0) {
+        return this.$emit('alert', 'The amount is incorrect.', 'error');
+      }
       // convert string to array
       const randomArray = random.split(' ');
       let output = '';
@@ -188,7 +198,7 @@ export default {
       if (this.randomResult) {
         this.$emit('alert', 'The input have been randomized.', 'success');
       } else {
-        this.$emit('alert', 'The input is empty.', 'error');
+        return this.$emit('alert', 'The result is empty.', 'error');
       }
     },
     saveToStorage: function (key) {
@@ -243,7 +253,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 .pointer-down {
