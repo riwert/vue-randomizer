@@ -17,7 +17,7 @@
               offset-y
             >
               <template v-slot:activator="{ on }">
-                <v-btn color="success" class="btn-load ma-2" v-on="on">
+                <v-btn color="success" class="btn-load ma-1" v-on="on">
                   <v-icon left>mdi-folder-download</v-icon>
                   Load example
                   <v-icon right class="pointer-down" :class="{'flip': example}">mdi-chevron-down</v-icon>
@@ -34,7 +34,7 @@
               </v-list>
             </v-menu>
 
-            <v-btn color="warning" class="ma-2" @click="clearInput">
+            <v-btn color="warning" class="ma-1" @click="clearInput">
               <v-icon left>mdi-file-remove</v-icon>
               Clear input
             </v-btn>
@@ -75,11 +75,11 @@
           ></v-textarea>
 
           <div class="my-0">
-            <v-btn color="success" class="ma-2" @click="saveOutput">
+            <v-btn color="success" class="ma-1" @click="saveOutput">
               <v-icon left>mdi-file-download</v-icon>
               Save result
             </v-btn>
-            <v-btn color="warning" class="ma-2" @click="clearOutput">
+            <v-btn color="warning" class="ma-1" @click="clearOutput">
               <v-icon left>mdi-file-remove</v-icon>
               Clear result
             </v-btn>
@@ -154,8 +154,8 @@ export default {
         if (this.examples[type].amount) {
           this.randomAmount = this.examples[type].amount;
         }
-        // clear result
-        // this.randomResult = '';
+        // trigger randomization
+        this.onSubmit();
         if (this.randomAmount) {
           this.$emit('alert', `Example ${this.examples[type].label} has been loaded.`, 'success');
         }
